@@ -1,0 +1,10 @@
+sudo: required
+language: generic
+service:
+  - docker
+
+before install:
+  - docker build -t vjchi/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true vjchi/docker-react npm run test -- --coverage
