@@ -8,3 +8,6 @@ before install:
 
 script:
   - docker run -e CI=true vjchi/docker-react npm run test -- --coverage
+
+deploy:
+  - provider: 
